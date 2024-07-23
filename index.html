@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science For All</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            padding: 2rem;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.section');
+
+            links.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const target = link.getAttribute('href').substring(1);
+
+                    sections.forEach(section => {
+                        if (section.id === target) {
+                            section.classList.add('active');
+                        } else {
+                            section.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            // Show the home section by default
+            document.querySelector('#home').classList.add('active');
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>علوم بشكل مختلف مع S4A Team</h1>
+    </header>
+    <nav>
+        <a href="#home" class="nav-link">الصفحة الرئيسية</a>
+        <a href="#trainings" class="nav-link">تدريبات</a>
+        <a href="#summaries" class="nav-link">ملخصات</a>
+        <a href="#explanations" class="nav-link">شروحات</a>
+        <a href="#blog" class="nav-link">مدونة</a>
+        <a href="#teams" class="nav-link">فرق العمل</a>
+        <a href="#chat" class="nav-link">شات</a>
+        <a href="#partners" class="nav-link">شركاء</a>
+        <a href="#social-media" class="nav-link">منصات التواصل</a>
+        <a href="#support" class="nav-link">الدعم</a>
+    </nav>
+    <div class="container">
+        <section id="home" class="section">
+            <h2>الصفحة الرئيسية</h2>
+            <form>
+                <label for="university">الجامعة:</label><br>
+                <input type="text" id="university" name="university"><br>
+                <label for="college">الكلية:</label><br>
+                <input type="text" id="college" name="college"><br>
+                <label for="year">الفرقة:</label><br>
+                <select id="year" name="year">
+                    <option value="1">أولى</option>
+                    <option value="2">ثانية</option>
+                    <option value="3">ثالثة</option>
+                    <option value="4">رابعة</option>
+                    <option value="other">أخرى</option>
+                </select><br>
+                <label for="department">القسم:</label><br>
+                <input type="text" id="department" name="department"><br>
+                <button type="submit">تسجيل الدخول</button>
+            </form>
+        </section>
+        <section id="trainings" class="section">
+            <h2>تدريبات</h2>
+            <p>محتوى تدريبات سيتم إضافته هنا.</p>
+        </section>
+        <section id="summaries" class="section">
+            <h2>ملخصات</h2>
+            <p>محتوى ملخصات سيتم إضافته هنا.</p>
+        </section>
+        <section id="explanations" class="section">
+            <h2>شروحات</h2>
+            <p>محتوى شروحات سيتم إضافته هنا.</p>
+        </section>
+        <section id="blog" class="section">
+            <h2>مدونة</h2>
+            <p>محتوى المدونة سيتم إضافته هنا.</p>
+        </section>
+        <section id="teams" class="section">
+            <h2>فرق العمل</h2>
+            <p>محتوى فرق العمل سيتم إضافته هنا.</p>
+        </section>
+        <section id="chat" class="section">
+            <h2>شات</h2>
+            <p>محتوى الشات سيتم إضافته هنا.</p>
+        </section>
+        <section id="partners" class="section">
+            <h2>شركاء</h2>
+            <p>محتوى الشركاء سيتم إضافته هنا.</p>
+        </section>
+        <section id="social-media" class="section">
+            <h2>منصات التواصل</h2>
+            <p>روابط منصات التواصل الاجتماعي سيتم إضافتها هنا.</p>
+        </section>
+        <section id="support" class="section">
+            <h2>الدعم</h2>
+            <p>محتوى الدعم سيتم إضافته هنا.</p>
+        </section>
+    </div>
+    <footer>
+        <p>© 2024 علوم بشكل مختلف مع S4A Team</p>
+    </footer>
+</body>
+</html>
